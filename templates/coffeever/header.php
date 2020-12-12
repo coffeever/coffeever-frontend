@@ -23,11 +23,9 @@ if (isset($_GET['code'])) {
   // get profile info
   $google_oauth = new Google_Service_Oauth2($client);
   $google_account_info = $google_oauth->userinfo->get();
-  $email =  $google_account_info->email;
-  $name =  $google_account_info->name;
 
   $userObj = [
-    "google_id"=> intval(json_encode($body)),
+    "google_id"=> intval($google_account_info->id),
     "name"=> $google_account_info->name,
     "mail"=> $google_account_info->email,
   ];
