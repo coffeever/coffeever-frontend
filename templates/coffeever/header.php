@@ -27,7 +27,7 @@ if (isset($_GET['code'])) {
   $name =  $google_account_info->name;
 
   $userObj = [
-    "google_id"=> $google_account_info->id,
+    "google_id"=> intval(json_encode($body)),
     "name"=> $google_account_info->name,
     "mail"=> $google_account_info->email,
   ];
