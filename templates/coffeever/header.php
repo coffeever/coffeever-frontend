@@ -32,6 +32,9 @@ if (isset($_GET['code'])) {
     "mail"=> $google_account_info->email,
   ];
 
+  $result = makeRequest("getAllCoffees", $userObj, 'POST');
+  debugPrint($result);
+
   $_SESSION['isLoggedIn'] = true;
   $_SESSION['subscriberObj'] = $userObj;
 
