@@ -31,7 +31,6 @@ if (isset($_GET['code'])) {
   ];
 
   $result = makeRequest("login", $userObj, 'POST');
-  debugPrint($result);
 
   $_SESSION['isLoggedIn'] = true;
   $_SESSION['subscriberObj'] = $userObj;
