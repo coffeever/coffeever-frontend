@@ -12,7 +12,7 @@ $first6Coffee = array_slice($result, 0, 6);
             <div class="col-md-8 col-sm-12 text-center ftco-animate">
             	<span class="subheading">Welcome</span>
               <h1 class="mb-4">The Coffee That You Deserve</h1>
-              <p><a href="search.html" class="btn btn-primary p-3 px-xl-4 py-xl-3">Search Now</a> </p>
+              <p><a href="/search" class="btn btn-primary p-3 px-xl-4 py-xl-3">Search Now</a> </p>
             </div>
 
           </div>
@@ -27,7 +27,7 @@ $first6Coffee = array_slice($result, 0, 6);
             <div class="col-md-8 col-sm-12 text-center ftco-animate">
             	<span class="subheading">Welcome</span>
               <h1 class="mb-4">Here With Us Find Your Coffee Style</h1>
-              <p><a href="search.html" class="btn btn-primary p-3 px-xl-4 py-xl-3">Search Now</a> </p>
+              <p><a href="/search" class="btn btn-primary p-3 px-xl-4 py-xl-3">Search Now</a> </p>
             </div>
 
           </div>
@@ -42,7 +42,7 @@ $first6Coffee = array_slice($result, 0, 6);
             <div class="col-md-8 col-sm-12 text-center ftco-animate">
             	<span class="subheading">Welcome</span>
               <h1 class="mb-4">Life Is Too Short To Drink Bad Coffee</h1>
-              <p><a href="search.html" class="btn btn-primary p-3 px-xl-4 py-xl-3">Search Now</a> </p>
+              <p><a href="/search" class="btn btn-primary p-3 px-xl-4 py-xl-3">Search Now</a> </p>
             </div>
 
           </div>
