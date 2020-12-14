@@ -7,12 +7,11 @@ $routes = [
         "route" => '^home[\/]?$',
         "file" => "home.php",
         "onBeforeAction" => function () {
-            setConfigParam('siteTitle', 'Adawall Home');
-            setConfigParam('metaDescription', 'Adawall Home meta description');
+            setConfigParam('siteTitle', 'Coffever');
         }
     ],
     [
-        "route" => "^giris-yap[\/]?$",
+        "route" => "^login[\/]?$",
         "file" => "components/login.php",
 
         "printHeader" => false,
@@ -22,36 +21,7 @@ $routes = [
                 header('Location: ' . getSafeUrl('/hesap/kullanici-paneli'));
                 exit();
             }
-            setConfigParam('siteTitle', 'Giriş Yap');
-        }
-    ],
-    [
-        "route" => "^kayit-ol[\/]?$",
-        "file" => "components/register.php",
-
-        "printHeader" => false,
-        "printFooter" => true,
-        "onBeforeAction" => function () {
-            if(isLoggedIn()){
-                header('Location: ' . getSafeUrl('/hesap/kullanici-paneli'));
-                exit();
-            }
-            setConfigParam('siteTitle', 'Kayıt Ol');
-        }
-    ],
-    [
-        "route" => "^parolami-unuttum/([a-zA-Z0-9-]+)[\/]?$",
-        "file" => "components/reset-password.php",
-        "onBeforeAction" => function ($params) {
-            if (!empty($params) && isset($params['title'])) {
-                setConfigParam('siteTitle', 'Parolamı Unuttum');
-            }
-        },
-        "data" => function ($params) {
-            $alias = $params[1];
-            $data = makeRequest("get", ["tokens" => $alias], ["collection" => "subscribers"]);
-            $data['token'] = $alias;
-            return $data;
+            setConfigParam('siteTitle', 'Login');
         }
     ],
     [
@@ -63,46 +33,7 @@ $routes = [
         }
     ],
     [
-        "isAlias" => true,
-        "route" => "^".$postsUrlStructure."[\/]?$",
-        "file" => "components/news.php",
-
-        "onBeforeAction" => function () {
-            setConfigParam('siteTitle', 'Blog');
-        }
-    ],
-    [
-        "route" => "^yazilar/".$postDetailUrlStructure."[\/]?$",
-        "file" => "components/news-detail.php",
-
-        "stopExecution" => false,
-        "onBeforeAction" => function ($params) {
-            if (!empty($params) && isset($params['title'])) {
-                setConfigParam('siteTitle', $params['title']);
-            }
-        },
-        "data" => function ($params) {
-            $alias = $params[1];
-            $data = makeRequest("get", ["alias" => $alias], ["collection" => "posts"]);
-            if (!empty($data)) {
-                if (!empty($data['metaTitle'])) {
-                    setConfigParam('siteTitle', $data['metaTitle']);
-                }
-                if (!empty($data['metaKeywords'])) {
-                    setConfigParam('metaKeywords', $data['metaKeywords']);
-                }
-                if (!empty($data['metaDescription'])) {
-                    setConfigParam('metaDescription', $data['metaDescription']);
-                }
-                if (!empty($data['image'])) {
-                    setConfigParam('ogImage', getPictureWithLink($data['image']));
-                }
-            }
-            return $data;
-        }
-    ],
-    [
-        "route" => "^hesap/kullanici-paneli[\/]?$",
+        "route" => "^account[\/]?$",
         "file" => "dashboard/user-panel.php",
 
         "isPublic" => true,
@@ -110,145 +41,58 @@ $routes = [
         "printFooter" => true,
         "onBeforeAction" => function () {
             if(!isLoggedIn()){
-                header('Location: ' . getSafeUrl('/giris-yap'));
+                header('Location: ' . getSafeUrl('/login'));
                 exit();
             }
-            setConfigParam('siteTitle', 'Kullanıcı Paneli');
+            setConfigParam('siteTitle', 'Account');
         }
     ],
     [
-        "route" => "^hesap/adreslerim[\/]?$",
-        "file" => "dashboard/adresses.php",
+        "route" => "^favorites[\/]?$",
+        "file" => "dashboard/favorites.php",
 
         "isPublic" => true,
         "printHeader" => true,
         "printFooter" => true,
         "onBeforeAction" => function () {
-            setConfigParam('siteTitle', 'Adreslerim');
+            setConfigParam('siteTitle', 'Favorites');
         }
     ],
     [
-        "route" => "^sepet[\/]?$",
-        "file" => "payment/cart.php",
+        "route" => "^our-team[\/]?$",
+        "file" => "components/our-team.php",
 
         "onBeforeAction" => function () {
-            setConfigParam('siteTitle', 'Satın Al');
+            setConfigParam('siteTitle', 'Our Team');
         }
     ],
     [
-        "route" => "^iletisim[\/]?$",
+        "route" => "^contact[\/]?$",
         "file" => "components/contact.php",
 
         "onBeforeAction" => function () {
-            setConfigParam('siteTitle', 'İletişim');
-            setConfigParam("bodyClass","template-collection header-has-overlap");
+            setConfigParam('siteTitle', 'Contact');
         }
     ],
     [
-        "route" => "^sikca-sorulan-sorular[\/]?$",
-        "file" => "components/faq.php",
-        "onBeforeAction" => function () {
-            setConfigParam('siteTitle', 'Sıkça Sorulan Sorular');
-            setConfigParam("bodyClass","template-collection header-has-overlap");
-        },
-        "data" => function ($params) {
-            $data = makeRequest("getList", [], ["collection" => "faqs"]);
-            return $data;
-        }
-    ],
-    [
-        "route" => "^siparis-onay[\/]?$",
-        "file" => "payment/checkout.php",
-
-        "onBeforeAction" => function () {
-            if (!isLoggedIn()) {
-                $_SESSION['referenceUrl'] = 'siparis-onay';
-                header('Location: /giris-yap');
-                exit();
-            }
-            $_SESSION['referenceUrl'] = '';
-            setConfigParam('siteTitle', 'Satın Al');
-        }
-    ],
-    [
-        "route" => "^odeme/([a-zA-Z0-9-]+)[\/]?$",
-        "file" => "payment/payment.php",
-        "stopExecution" => false,
-        "onBeforeAction" => function ($params) {
-            if (!empty($params) && isset($params['title'])) {
-                setConfigParam('siteTitle', $params['title']);
-            }
-        },
-        "data" => function ($params) {
-            $alias = $params[1];
-            $data = makeRequest("get", ["_id" => $alias], ["collection" => "orders"]);
-            if (!empty($data)) {
-                if (!empty($data['metaTitle'])) {
-                    setConfigParam('siteTitle', $data['metaTitle']);
-                }
-                if (!empty($data['metaKeywords'])) {
-                    setConfigParam('metaKeywords', $data['metaKeywords']);
-                }
-                if (!empty($data['metaDescription'])) {
-                    setConfigParam('metaDescription', $data['metaDescription']);
-                }
-                if (!empty($data['image'])) {
-                    setConfigParam('ogImage', getPictureWithLink($data['image']));
-                }
-            }
-            return $data;
-        }
-    ],
-    [
-        "route" => "^ara[\/]?$",
+        "route" => "^search[\/]?$",
         "file" => "components/search.php",
         "onBeforeAction" => function () {
-            $keywords = isset($_GET['q']) ? urldecode(trim($_GET['q'])) : "";
-            if (isset($_GET['t'])) {
-                if ($_GET['t'] == "products") {
-                    $searchFor = "Ürün";
-                }
-                if ($_GET['t'] == "posts") {
-                    $searchFor = "Yazı";
-                }
-            }
-            setConfigParam('siteTitle', $searchFor . ' arama sonuçları: ' . $keywords);
+            setConfigParam('siteTitle', 'Search');
         }
     ],
     [
-        "route" => "^paytr-callback[\/]?$",
-        "stopExecution" => true,
+        "route" => "^results[\/]?$",
+        "file" => "components/results.php",
         "onBeforeAction" => function () {
-            exit();
+            setConfigParam('siteTitle', 'Search');
         }
     ],
     [
-        "route" => "^([a-zA-Z0-9-]+)[\/]?$",
-        "file" => "components/single-page.php",
-        "stopExecution" => false,
-        "onBeforeAction" => function ($params) {
-            if (!empty($params) && isset($params['title'])) {
-                setConfigParam('siteTitle', $params['title']);
-            }
-        },
-        "data" => function ($params) {
-            $alias = $params[1];
-            $data = makeRequest("get", ["alias" => $alias], ["collection" => "pages"]);
-            if (!empty($data)) {
-                if (!empty($data['metaTitle'])) {
-                    setConfigParam('siteTitle', $data['metaTitle']);
-                }
-                if (!empty($data['metaKeywords'])) {
-                    setConfigParam('metaKeywords', $data['metaKeywords']);
-                }
-                if (!empty($data['metaDescription'])) {
-                    setConfigParam('metaDescription', $data['metaDescription']);
-                }
-                if (!empty($data['image'])) {
-                    setConfigParam('ogImage', getPictureWithLink($data['image']));
-                }
-            }
-            return $data;
+        "route" => "^coffees[\/]?$",
+        "file" => "components/coffees.php",
+        "onBeforeAction" => function () {
+            setConfigParam('siteTitle', 'Search');
         }
     ],
 ];

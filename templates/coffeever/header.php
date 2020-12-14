@@ -43,52 +43,61 @@ if (isset($_GET['code'])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
-<meta name="author" content="webthemez">
-<title>Coffeever Homepage</title>
+    <title> Coffeever</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
 
-<!-- Bootstrap core CSS -->
-<link href="templates/coffeever/assets/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="templates/coffeever/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="templates/coffeever/css/animate.css">
+    
+    <link rel="stylesheet" href="templates/coffeever/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="templates/coffeever/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="templates/coffeever/css/magnific-popup.css">
 
-<!-- Custom CSS -->
-<link href="templates/coffeever/assets/css/styles.css" rel="stylesheet">
-<link href="templates/coffeever/assets/css/font-awesome.min.css" rel="stylesheet">
-<link href="templates/coffeever/assets/css/animate-custom.css" rel="stylesheet"> 
-<script src="templates/coffeever/assets/js/jquery.min.js"></script>
-<script type="text/javascript" src="templates/coffeever/assets/js/modernizr.custom.js"></script>
+    <link rel="stylesheet" href="templates/coffeever/css/aos.css">
 
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries --> 
-<!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" href="templates/coffeever/css/ionicons.min.css">
 
-</head>
-<body data-target="#navbar-main">
-<div id="navbar-main"> 
-  <!-- Fixed navbar -->
-  <div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-	 
-      <div class="navbar-header">
-	   <div class="pull-left logo">
-        <a class="smoothScroll" data-id="#home-section" href="#"><img src="templates/coffeever/assets/img/coffeever-logo.png" /></a>
-       </div>
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-        </div>
-      <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav pull-right">
-          <li class='nav-item'><a data-id="#home-section" href='#' class="smoothScroll">Welcome</a></li>
-          <li class='nav-item'> <a data-id="#services" href='#' class="smoothScroll">We Offer</a></li>		  
-          <li class='nav-item'> <a data-id="#about" href='#' class="smoothScroll"> Coffeever</a></li>
-          <li class='nav-item'> <a data-id="#portfolio" href='#' class="smoothScroll"> We Recommend</a></li>
-          <li class='nav-item'> <a data-id="#team" href='#' class="smoothScroll"> Our Team</a></li>
-          <li class='nav-item'> <a data-id="#contact" href='#' class="smoothScroll"> Get In Touch</a></li>
-        </ul>
-      </div>
-      <!--/.nav-collapse --> 
-    </div>
-  </div>
-</div>
+    <link rel="stylesheet" href="templates/coffeever/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="templates/coffeever/css/jquery.timepicker.css">
+
+    
+    <link rel="stylesheet" href="templates/coffeever/css/flaticon.css">
+    <link rel="stylesheet" href="templates/coffeever/css/icomoon.css">
+    <link rel="stylesheet" href="templates/coffeever/css/style.css">
+    <link rel="icon" href="templates/coffeever/images/icons/favicon.png" sizes="32x32">
+  </head>
+  <body>
+  	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="/">Coffee<small>Fever</small></a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
+	          <li class="nav-item"><a href="/search" class="nav-link">Search</a></li>
+	          <li class="nav-item"><a href="/coffees" class="nav-link">Coffees</a></li>
+	          <li class="nav-item"><a href="/our-team" class="nav-link">Our Team</a></li>
+            <li class="nav-item"><a href="/contact" class="nav-link">Contact Us</a></li>
+            <?php if(isLoggedIn()): ?>
+              <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:22px;"><span class="icon icon-user"></span></a>
+              <div class="dropdown-menu" aria-labelledby="dropdown04">
+                <a class="dropdown-item" href="/account">My Account</a>
+                <a class="dropdown-item" href="/favorites">Favorites</a>
+                <a class="dropdown-item" href="/logout">Logout</a>
+              </div>
+            </li>
+            <?php else: ?>
+              <li class="nav-item"><a href="<?php echo $client->createAuthUrl() ?>" class="nav-link">Login</a></li>
+            <?php endif; ?>
+	        </ul>
+	      </div>
+		  </div>
+	  </nav>

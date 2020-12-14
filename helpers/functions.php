@@ -119,9 +119,6 @@ function makeRequest($path, $body = array(), $method = "POST")
 {
     $defaultFilter = array();
     $defaultParams = array();
-
-    debugPrint(json_encode($body));
-
     $curl = curl_init();
     curl_setopt_array($curl, array(
         CURLOPT_URL => (API_USE_SSL ? "https" : "http") . "://" . API_HOST . "/" . $path,
