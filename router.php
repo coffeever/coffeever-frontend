@@ -85,7 +85,24 @@ $routes = [
         "route" => "^results[\/]?$",
         "file" => "components/results.php",
         "onBeforeAction" => function () {
-            setConfigParam('siteTitle', 'Search');
+            setConfigParam('siteTitle', 'Results');
+            if(!empty($_GET['search']) && !empty($_GET['acidity']) && !empty($_GET['aroma']) && !empty($_GET['body']) && !empty($_GET['flavor']) && !empty($_GET['decaf'])) {
+                header('Location: ' . getSafeUrl('/search'));
+            }
+        },
+        "data" => function ($params) {
+            $keyword = $_GET['search'];
+            $acidity = intval($_GET['acidity']);
+            $aroma = intval($_GET['aroma']);
+            $body = intval($_GET['body']);
+            $flavor = intval($_GET['flavor']);
+            if ($_GET['decaf'] == 'on') {
+                $decaf = 1;
+            } else {
+                $decaf = 0;
+            }
+            $data = makeRequest("getSingleCoffee", ["aroma" => $aroma, "acidity" => $acidity, "body" => $body, "flavor" => $flavor, "keywords" => $keyword, "decaf" => $decaf], "GET");
+            return $data;
         }
     ],
     [
