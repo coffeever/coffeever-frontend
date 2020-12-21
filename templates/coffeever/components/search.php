@@ -221,37 +221,37 @@ Type what you want
 
 <div class="input1">
 <div >
-Aroma
+Aroma (<span id='aromaValue'>0</span>)
 </div>
 <div>
-<input type="range" name="aroma" min="1" max="10" value="0" class="slider" id="speed_slider">
+<input type="range" name="aroma" min="1" max="10" value="0" class="slider" id="aroma_slider">
 </div> 
 </div>  
 
 <div class="input1">
 <div >
-Acidity
+Acidity (<span id='acidityValue'>0</span>)
 </div>
 <div>
-<input type="range" name="acidity" min="1" max="10" value="0" class="slider" id="speed_slider">
+<input type="range" name="acidity" min="1" max="10" value="0" class="slider" id="acidity_slider">
 </div> 
 </div> 
 
 <div class="input1">
 <div>
-Body
+Body (<span id='bodyValue'>0</span>)
 </div>
 <div>
-<input type="range" name="body" min="1" max="10" value="0" class="slider" id="speed_slider">
+<input type="range" name="body" min="1" max="10" value="0" class="slider" id="body_slider">
 </div> 
 </div> 
 
 <div class="input1"> 
 <div>
-Flavor
+Flavor (<span id='flavorValue'>0</span>)
 </div>
 <div>
-<input type="range" name="flavor" min="1" max="10" value="0" class="slider" id="speed_slider">
+<input type="range" name="flavor" min="1" max="10" value="0" class="slider" id="flavor_slider">
 </div> 
 </div>  
 <div>
