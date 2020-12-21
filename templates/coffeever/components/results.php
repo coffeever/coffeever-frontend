@@ -42,7 +42,7 @@ defined('INDEX') or die();
                             
                             <td class="product-name">
                                 <h3><a href="/coffee-detail/<?php echo $result['slug'] ?>"><?php echo $result['name'] ?></a></h3>
-                                <p><?php echo $result['blind_assessment'] ?></p>
+                                <p><?php echo excerptStringByWord($result['blind_assessment'], 12); ?></p>
                             </td>
                             
                             <td class="total" id="aroma"><?php echo $result['aroma'] ?></td>                                
