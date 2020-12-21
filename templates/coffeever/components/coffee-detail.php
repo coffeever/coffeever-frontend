@@ -29,8 +29,8 @@ debugPrint($pageData);
           <div class="col-lg-6 mb-5 ftco-animate fadeInUp ftco-animated">
               <span>
                   <h3 class="text-left-right">
-                  <span class="left-text">Creamy Latte Coffee</span>
-                  <span class="decaf" id="showdecaf"> Decaffeinated</span> 
+                  <span class="left-text"><?php echo $pageData['name']; ?></span>
+                  <span class="decaf" id="showdecaf"> <?php echo ($pageData['decaf']) ? 'Decaffeinated' : ''; ?></span> 
                   </h3>
 
               <p class="Properties"><span class="phead">Properties</span> </p>
@@ -38,19 +38,19 @@ debugPrint($pageData);
                   <div class="row">
               <div class="col-sm">
               <ul>
-                  <li><span class="pname">Aroma: </span> <span class="prop" id="aromaprop">8</span> </li>
-                  <li><span class="pname">Acidity: </span> <span class="prop" id="acidprop"> 7</span> </li>
-                  <li><span class="pname">Body: </span> <span class="prop" id="bodyprop"> 9</span> </li>
-                  <li><span class="pname">Flavor: </span> <span class="prop" id="flavorprop"> 6</span> </li>
-                  <li><span class="pname">Roast: </span> <span class="prop" id="roastprop"> Medium</span> </li>
-                  <li><span class="pname">Region: </span> <span class="prop" id="regionprop"> Region</span> </li>
+                  <li><span class="pname">Aroma: </span> <span class="prop" id="aromaprop"> <?php echo $pageData['aroma']; ?></span> </li>
+                  <li><span class="pname">Acidity: </span> <span class="prop" id="acidprop"> <?php echo $pageData['acidity']; ?></span> </li>
+                  <li><span class="pname">Body: </span> <span class="prop" id="bodyprop"> <?php echo $pageData['body']; ?></span> </li>
+                  <li><span class="pname">Flavor: </span> <span class="prop" id="flavorprop"> <?php echo $pageData['flavor']; ?></span> </li>
+                  <li><span class="pname">Roast: </span> <span class="prop" id="roastprop"> <?php echo $pageData['roast']; ?></span> </li>
+                  <li><span class="pname">Region: </span> <span class="prop" id="regionprop"> <?php echo $pageData['region']; ?></span> </li>
               </ul>   
               </div> 
 
                <div class="col-sm">
                   <span class="rate" style=" margin-left: 10%;">Rating</span><br><br>
                       <div class="c100 p73 orange">
-                          <span id="rating">73%</span>
+                          <span id="rating"><?php echo $pageData['rate']; ?>%</span>
                           <div class="slice">
                               <div class="bar"></div>
                               <div class="fill"></div>
@@ -59,8 +59,7 @@ debugPrint($pageData);
                </div> 
                </div>  
            </div>
-              <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-              
+              <p>This coffee bean is <?php echo $pageData['roast']; ?> roasted and grown in the <?php echo $pageData['region']; ?> region.</p>
           </div>
       </div>
   </div>
@@ -90,7 +89,7 @@ debugPrint($pageData);
                           <div class="menu-wrap">
                               <div class="text">
                                   <h3>Location</h3>
-                                  <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+                                  <p><?php echo $pageData['location']; ?></p>
                                  
                               </div>
                           </div>
@@ -104,7 +103,7 @@ debugPrint($pageData);
                           <div class="menu-wrap">
                               <div class="text">
                                   <h3>Blind Assessment</h3>
-                                  <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+                                  <p><?php echo $pageData['blindAssessment']; ?></p>
                                  
                               </div>
                           </div>
@@ -118,7 +117,7 @@ debugPrint($pageData);
                           <div class="menu-wrap">
                               <div class="text">
                                   <h3>Notes</h3>
-                                  <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+                                  <p><?php echo $pageData['notes']; ?></p>
                                  
                               </div>
                           </div>
@@ -131,7 +130,7 @@ debugPrint($pageData);
                           <div class="menu-wrap">
                               <div class="text">
                                   <h3>Who Should Drink</h3>
-                                  <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+                                  <p><?php echo $pageData['whoShouldDrink']; ?></p>
                                  
                               </div>
                           </div>
