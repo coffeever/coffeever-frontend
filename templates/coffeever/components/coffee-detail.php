@@ -81,7 +81,7 @@ $keywords = explode(', ', $pageData['keywords']);
               
               <div class="tab-content ftco-animate fadeInUp ftco-animated" id="v-pills-tabContent">
 
-                <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-2-tab">
+                <div class="tab-pane fade show active" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-2-tab">
                   <div class="row">
                       <div class=" text-center">
                           <div class="menu-wrap">
