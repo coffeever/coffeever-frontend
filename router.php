@@ -107,9 +107,6 @@ $routes = [
         "data" => function ($params) {
             $alias = $params[1];
             $data = makeRequest("getSingleCoffee", ["slug" => $alias], "GET");
-            debugPrint($data);
-            die();
-
             if (!empty($data)) {
                 if (!empty($data['metaTitle'])) {
                     setConfigParam('siteTitle', $data['name']);
