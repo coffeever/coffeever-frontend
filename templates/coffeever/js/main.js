@@ -298,4 +298,10 @@
 
 $('body').on('change', '#aroma_slider', function(event){
 	$('#aromaValue').text($('#aroma_slider').val());
+}).on('change', '#body_slider', function(event){
+	$('#bodyValue').text($('#body_slider').val());
+}).on('change', '#acidity_slider', function(event){
+	$('#acidityValue').text($('#acidity_slider').val());
+}).on('change', '#flavor_slider', function(event){
+	$('#flavorValue').text($('#flavor_slider').val());
 });
