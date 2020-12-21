@@ -97,7 +97,7 @@ $routes = [
     ],
     [
         "route" => "^coffee-detail/([a-zA-Z0-9-]+)[\/]?$",
-        "file" => "components/product-detail.php",
+        "file" => "components/coffee-detail.php",
         "stopExecution" => false,
         "onBeforeAction" => function ($params) {
             if (!empty($params) && isset($params['title'])) {
