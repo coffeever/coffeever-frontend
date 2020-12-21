@@ -258,26 +258,11 @@ Flavor
 <div>
 <!--	<label for="decaf"> Decaf</label>  <input type="checkbox" id="decaf" name="vehicle1" value="Bike"> -->
 <label class="checkk">Decaffeinated
-<input type="checkbox">
+<input name="decaf" type="checkbox">
 <span class="checkmark"></span>
 </label>
 </div>
-</div> 
-<div>
-<div>
-  <label for="roastinput"> Roast: 
-  <select id="roastinput">
-      <option value="0">Select Roast</option>
-      <option value="1">light</option>
-      <option value="2">medium_light</option>
-      <option value="3">medium</option>
-      <option value="4">medium_dark</option>            
-      <option value="5">green</option>
-      <option value="6">dark</option>
-        </select>
-  </label>
-</div>         
-</div>    
+</div>   
 <!--<div style="padding-left: 200px;">
 <label for="cars">Acidity</label>
 
