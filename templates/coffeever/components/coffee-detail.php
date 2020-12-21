@@ -2,65 +2,6 @@
 defined('INDEX') or die();
 debugPrint($pageData);
 ?>
-<style type="text/css" id="my style for this page">
-    .img-fluid {
-    max-width: 75% !important;
-    height: auto;
-    }
-
-    .phead{
-        font-size:18px;
-        color:#c49b63;
-        font-weight: 600;
-    }
-    li{
-        list-style: none;
-    }
-    .pname{
-        font-size:16px;
-        color:#c49b63;
-        font-weight: 450;
-    }
-    .text-left-right {
-    text-align: right;
-    position: relative;
-    }   
-    .left-text {
-    left: 0;
-    position: absolute;
-    }
-    .decaf {
-    font-size: 16px;
-    color:#a0c463;
-    /*text-decoration: underline; */
-    font-style: italic;
-    text-shadow: 2px 2px 12px  #fff;
-    display: 
-    }
-    .rate{
-        text-align: center;
-        font-size:16px;
-        color:#c49b63;
-        font-weight: 450;
-    }
-    #rating{
-         color: #c49b63;
-    }
-    .ftco-menu{
-        padding-top: 0em !important;
-    }
-    </style>
-
-   
-
-<script type="text/javascript">
-   window.onload = function showd(){
-        var x = document.getElementById("showdecaf");
-        
-            x.style.display="inline-block";
-        
- }
-</script>
 <section class="home-slider owl-carousel">
 <div class="slider-item" style="background-image: url(templates/coffeever/images/bg_3.jpg);" data-stellar-background-ratio="0.5">
   <div class="overlay"></div>
