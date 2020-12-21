@@ -50,25 +50,25 @@ if (isset($_GET['code'])) {
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
 
-    <link rel="stylesheet" href="templates/coffeever/css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="templates/coffeever/css/animate.css">
+    <link rel="stylesheet" href="/templates/coffeever/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="/templates/coffeever/css/animate.css">
     
-    <link rel="stylesheet" href="templates/coffeever/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="templates/coffeever/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="templates/coffeever/css/magnific-popup.css">
+    <link rel="stylesheet" href="/templates/coffeever/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/templates/coffeever/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/templates/coffeever/css/magnific-popup.css">
 
-    <link rel="stylesheet" href="templates/coffeever/css/aos.css">
+    <link rel="stylesheet" href="/templates/coffeever/css/aos.css">
 
-    <link rel="stylesheet" href="templates/coffeever/css/ionicons.min.css">
+    <link rel="stylesheet" href="/templates/coffeever/css/ionicons.min.css">
 
-    <link rel="stylesheet" href="templates/coffeever/css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="templates/coffeever/css/jquery.timepicker.css">
+    <link rel="stylesheet" href="/templates/coffeever/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="/templates/coffeever/css/jquery.timepicker.css">
 
     
-    <link rel="stylesheet" href="templates/coffeever/css/flaticon.css">
-    <link rel="stylesheet" href="templates/coffeever/css/icomoon.css">
-    <link rel="stylesheet" href="templates/coffeever/css/style.css">
-    <link rel="icon" href="templates/coffeever/images/icons/favicon.png" sizes="32x32">
+    <link rel="stylesheet" href="/templates/coffeever/css/flaticon.css">
+    <link rel="stylesheet" href="/templates/coffeever/css/icomoon.css">
+    <link rel="stylesheet" href="/templates/coffeever/css/style.css">
+    <link rel="icon" href="/templates/coffeever/images/icons/favicon.png" sizes="32x32">
   </head>
   <body>
   	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
