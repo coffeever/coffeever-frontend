@@ -9276,3 +9276,49 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+    .img-fluid {
+      max-width: 75% !important;
+      height: auto;
+      }
+  
+      .phead{
+          font-size:18px;
+          color:#c49b63;
+          font-weight: 600;
+      }
+      li{
+          list-style: none;
+      }
+      .pname{
+          font-size:16px;
+          color:#c49b63;
+          font-weight: 450;
+      }
+      .text-left-right {
+      text-align: right;
+      position: relative;
+      }   
+      .left-text {
+      left: 0;
+      position: absolute;
+      }
+      .decaf {
+      font-size: 16px;
+      color:#a0c463;
+      /*text-decoration: underline; */
+      font-style: italic;
+      text-shadow: 2px 2px 12px  #fff;
+      display: 
+      }
+      .rate{
+          text-align: center;
+          font-size:16px;
+          color:#c49b63;
+          font-weight: 450;
+      }
+      #rating{
+           color: #c49b63;
+      }
+      .ftco-menu{
+          padding-top: 0em !important;
+      }
