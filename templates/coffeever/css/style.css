@@ -9299,8 +9299,7 @@ textarea.form-control {
       position: relative;
       }   
       .left-text {
-      left: 0;
-      position: absolute;
+      position: relative;
       }
       .decaf {
       font-size: 16px;
