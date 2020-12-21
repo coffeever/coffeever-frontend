@@ -86,7 +86,7 @@ $routes = [
         "file" => "components/results.php",
         "onBeforeAction" => function () {
             setConfigParam('siteTitle', 'Results');
-            if(!empty($_GET['search']) && !empty($_GET['acidity']) && !empty($_GET['aroma']) && !empty($_GET['body']) && !empty($_GET['flavor'])) {
+            if(empty($_GET['search']) || empty($_GET['acidity']) || empty($_GET['aroma']) || empty($_GET['body']) || empty($_GET['flavor'])) {
                 header('Location: ' . getSafeUrl('/search'));
             }
         },
