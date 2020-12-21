@@ -28,7 +28,7 @@ $keywords = explode(', ', $pageData['keywords']);
 
           <div class="col-lg-6 mb-5 ftco-animate fadeInUp ftco-animated">
               <span>
-                  <h3 class="text-left-right">
+                  <h3>
                   <span class="left-text"><?php echo $pageData['name']; ?></span>
                   <span class="decaf" id="showdecaf"> <?php echo ($pageData['decaf']) ? 'Decaffeinated' : ''; ?></span> 
                   </h3>
