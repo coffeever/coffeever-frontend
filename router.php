@@ -86,12 +86,16 @@ $routes = [
         "file" => "components/results.php",
         "onBeforeAction" => function () {
             setConfigParam('siteTitle', 'Results');
-            if(empty($_GET['search']) || empty($_GET['acidity']) || empty($_GET['aroma']) || empty($_GET['body']) || empty($_GET['flavor'])) {
+            if(empty($_GET['acidity']) || empty($_GET['aroma']) || empty($_GET['body']) || empty($_GET['flavor'])) {
                 header('Location: ' . getSafeUrl('/search'));
             }
         },
         "data" => function ($params) {
-            $keyword = $_GET['search'];
+            if (isset($_GET['search'])) {
+                $keyword = $_GET['search'];
+            } else {
+                $keyword = '';
+            }
             $acidity = intval($_GET['acidity']);
             $aroma = intval($_GET['aroma']);
             $body = intval($_GET['body']);
