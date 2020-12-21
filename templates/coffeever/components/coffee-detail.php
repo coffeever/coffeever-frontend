@@ -50,7 +50,7 @@ debugPrint($pageData);
                <div class="col-sm">
                   <span class="rate" style=" margin-left: 10%;">Rating</span><br><br>
                       <div class="c100 p73 orange">
-                          <span id="rating"><?php echo $pageData['rate']; ?>%</span>
+                          <span id="rating"><?php echo $pageData['rating']; ?>%</span>
                           <div class="slice">
                               <div class="bar"></div>
                               <div class="fill"></div>
@@ -71,10 +71,7 @@ debugPrint($pageData);
               <div class="row">
             <div class="col-md-12 nav-link-wrap mb-5">
               <div class="nav ftco-animate nav-pills  fadeInUp ftco-animated" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <a class="nav-link active" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Location</a>
-
                 <a class="nav-link" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Blind Assessment</a>
-
                 <a class="nav-link" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab" aria-controls="v-pills-3" aria-selected="false">Notes</a>
                 <a class="nav-link" id="v-pills-4-tab" data-toggle="pill" href="#v-pills-4" role="tab" aria-controls="v-pills-4" aria-selected="false">Who Should Drink</a>
               </div>
@@ -82,20 +79,6 @@ debugPrint($pageData);
             <div class="col-md-12 d-flex align-items-center">
               
               <div class="tab-content ftco-animate fadeInUp ftco-animated" id="v-pills-tabContent">
-
-                <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-1-tab">
-                  <div class="row">
-                      <div class=" text-center">
-                          <div class="menu-wrap">
-                              <div class="text">
-                                  <h3>Location</h3>
-                                  <p><?php echo $pageData['location']; ?></p>
-                                 
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                </div>
 
                 <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-2-tab">
                   <div class="row">
