@@ -41,7 +41,7 @@ defined('INDEX') or die();
                           <td class="image-prod"><div class="img" style="background-image:url(templates/coffeever/images/menu-2.jpg);"></div></td>
                           
                           <td class="product-name">
-                              <h3><?php echo $result['name'] ?></h3>
+                              <h3><a href="/coffee-detail/<?php echo $result['slug'] ?>"><?php echo $result['name'] ?></a></h3>
                               <p><?php echo $result['blindAssesment'] ?></p>
                           </td>
                           
