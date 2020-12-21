@@ -33,7 +33,7 @@ $newCoffees = array_slice($coffees, 0, 9);
                         <div class="meta">
                         <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 0</a></div>
                     </div>
-                    <h3 class="heading mt-2"><a href="/coffee-detail/<?php echo $coffee['slug']; ?>"><?php echo $coffee['slug']; ?></a></h3>
+                    <h3 class="heading mt-2"><a href="/coffee-detail/<?php echo $coffee['slug']; ?>"><?php echo $coffee['name']; ?></a></h3>
                     <p>This coffee bean is <?php echo $coffee['roast']; ?> roasted and grown in the <?php echo $coffee['region']; ?> region.</p>
                     </div>
                     </div>
