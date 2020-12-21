@@ -101,7 +101,9 @@ $routes = [
             } else {
                 $decaf = 0;
             }
-            $data = makeRequest("getSingleCoffee", ["aroma" => $aroma, "acidity" => $acidity, "body" => $body, "flavor" => $flavor, "keywords" => $keyword, "decaf" => $decaf], "GET");
+            $data = makeRequest("findBestMatch", ["aroma" => $aroma, "acidity" => $acidity, "body" => $body, "flavor" => $flavor, "keywords" => $keyword, "decaf" => $decaf], "GET");
+            debugPrint($data);
+            die();
             return $data;
         }
     ],
