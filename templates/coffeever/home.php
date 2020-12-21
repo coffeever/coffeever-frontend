@@ -2,6 +2,7 @@
 defined('INDEX') or die();
 $result = makeRequest("getAllCoffees", [], 'GET');
 $first6Coffee = array_slice($result, 0, 6);
+$data = makeRequest("getSingleCoffee", ["slug" => "100-arabica"], "GET");
 ?>
 <section class="home-slider owl-carousel">
       <div class="slider-item" style="background-image: url(templates/coffeever/images/bg_1.jpg);">
