@@ -95,6 +95,26 @@ $routes = [
             setConfigParam('siteTitle', 'Search');
         }
     ],
+    [
+        "route" => "^coffee-detail/([a-zA-Z0-9-]+)[\/]?$",
+        "file" => "components/product-detail.php",
+        "stopExecution" => false,
+        "onBeforeAction" => function ($params) {
+            if (!empty($params) && isset($params['title'])) {
+                setConfigParam('siteTitle', $params['title']);
+            }
+        },
+        "data" => function ($params) {
+            $alias = $params[1];
+            $data = makeRequest("getSingleCoffee", ["slug" => $alias], "GET");
+            if (!empty($data)) {
+                if (!empty($data['metaTitle'])) {
+                    setConfigParam('siteTitle', $data['name']);
+                }
+            }
+            return $data;
+        }
+    ],
 ];
 global $currentTemplate;
 $currentTemplate = 'coffeever';

@@ -1,5 +1,6 @@
 <?php
 defined('INDEX') or die();
+debugPrint($pageData);
 ?>
 <style type="text/css" id="my style for this page">
     .img-fluid {
