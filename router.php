@@ -86,7 +86,7 @@ $routes = [
         "file" => "components/results.php",
         "onBeforeAction" => function () {
             setConfigParam('siteTitle', 'Results');
-            if(!empty($_GET['search']) && !empty($_GET['acidity']) && !empty($_GET['aroma']) && !empty($_GET['body']) && !empty($_GET['flavor']) && !empty($_GET['decaf'])) {
+            if(!empty($_GET['search']) && !empty($_GET['acidity']) && !empty($_GET['aroma']) && !empty($_GET['body']) && !empty($_GET['flavor'])) {
                 header('Location: ' . getSafeUrl('/search'));
             }
         },
@@ -96,14 +96,12 @@ $routes = [
             $aroma = intval($_GET['aroma']);
             $body = intval($_GET['body']);
             $flavor = intval($_GET['flavor']);
-            if ($_GET['decaf'] == 'on') {
+            if (isset($_GET['decaf']) && $_GET['decaf'] == 'on') {
                 $decaf = 1;
             } else {
                 $decaf = 0;
             }
             $data = makeRequest("findBestMatch", ["aroma" => $aroma, "acidity" => $acidity, "body" => $body, "flavor" => $flavor, "keywords" => $keyword, "decaf" => $decaf], "GET");
-            debugPrint($data);
-            die();
             return $data;
         }
     ],
