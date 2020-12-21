@@ -1,6 +1,7 @@
 <?php
 defined('INDEX') or die();
-debugPrint($pageData);
+$keywords = explode(', ', $pageData['keywords']);
+debugPrint($keywords);
 ?>
 <section class="home-slider owl-carousel">
 <div class="slider-item" style="background-image: url(templates/coffeever/images/bg_3.jpg);" data-stellar-background-ratio="0.5">
@@ -71,7 +72,8 @@ debugPrint($pageData);
               <div class="row">
             <div class="col-md-12 nav-link-wrap mb-5">
               <div class="nav ftco-animate nav-pills  fadeInUp ftco-animated" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <a class="nav-link" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Blind Assessment</a>
+                <a class="nav-link" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="true">Blind Assessment</a>
+
                 <a class="nav-link" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab" aria-controls="v-pills-3" aria-selected="false">Notes</a>
                 <a class="nav-link" id="v-pills-4-tab" data-toggle="pill" href="#v-pills-4" role="tab" aria-controls="v-pills-4" aria-selected="false">Who Should Drink</a>
               </div>
