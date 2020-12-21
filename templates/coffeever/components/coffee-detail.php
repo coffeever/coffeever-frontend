@@ -3,7 +3,7 @@ defined('INDEX') or die();
 $keywords = explode(', ', $pageData['keywords']);
 ?>
 <section class="home-slider owl-carousel">
-<div class="slider-item" style="background-image: url(templates/coffeever/images/bg_3.jpg);" data-stellar-background-ratio="0.5">
+<div class="slider-item" style="background-image: url(/templates/coffeever/images/bg_3.jpg);" data-stellar-background-ratio="0.5">
   <div class="overlay"></div>
   <div class="container">
     <div class="row slider-text justify-content-center align-items-center">
@@ -22,7 +22,7 @@ $keywords = explode(', ', $pageData['keywords']);
   <div class="container">
       <div class="row">
           <div class="col-lg-6 mb-5 ftco-animate fadeInUp ftco-animated">
-              <a href="images/menu-2.jpg" class="image-popup"><img src="templates/coffeever/images/menu-2.jpg" class="img-fluid" alt="Colorlib Template"></a>
+              <a href="images/menu-2.jpg" class="image-popup"><img src="/templates/coffeever/images/menu-2.jpg" class="img-fluid" alt="Colorlib Template"></a>
           </div>
 
 
