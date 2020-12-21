@@ -138,7 +138,7 @@ class Router{
     }
 
     private function getTemplatePart($part){
-        $base = ROOT_DIR.DIRECTORY_SEPARATOR.'templates'.DIRECTORY_SEPARATOR.$this->currentTemplate.DIRECTORY_SEPARATOR;
+        $base = ROOT_DIR.'/'.'templates'.'/'.$this->currentTemplate.'/';
         return file_exists($base.$part) ? $base.$part : $base.'page-404.php';
     }
 }
