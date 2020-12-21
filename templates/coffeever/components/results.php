@@ -36,28 +36,28 @@ defined('INDEX') or die();
                         </tr>
                       </thead>
                       <tbody>
-                        <tr class="text-center">
-                          <?php foreach($pageData as $result): ?>
-                          <td class="image-prod"><div class="img" style="background-image:url(templates/coffeever/images/menu-2.jpg);"></div></td>
-                          
-                          <td class="product-name">
-                              <h3><a href="/coffee-detail/<?php echo $result['slug'] ?>"><?php echo $result['name'] ?></a></h3>
-                              <p><?php echo $result['blindAssesment'] ?></p>
-                          </td>
-                          
-                          <td class="total" id="aroma"><?php echo $result['aroma'] ?></td>                                
-                          <td class="total" id="acidity"><?php echo $result['acidity'] ?></td>
-                          <td class="total" id="body"><?php echo $result['body'] ?></td>
-                          <td class="total" id="flavor"><?php echo $result['flavor'] ?></td>
-                          <td class="total" id="decaf"><?php echo ($result['decaf']) ? 'Yes' : 'No'; ?></td>
-                          <td class="total" id="roast"><?php echo $result['roast'] ?></td>
+                        <?php foreach($pageData as $result): ?>
+                          <tr class="text-center">
+                            <td class="image-prod"><div class="img" style="background-image:url(templates/coffeever/images/menu-2.jpg);"></div></td>
+                            
+                            <td class="product-name">
+                                <h3><a href="/coffee-detail/<?php echo $result['slug'] ?>"><?php echo $result['name'] ?></a></h3>
+                                <p><?php echo $result['blind_assessment'] ?></p>
+                            </td>
+                            
+                            <td class="total" id="aroma"><?php echo $result['aroma'] ?></td>                                
+                            <td class="total" id="acidity"><?php echo $result['acidity'] ?></td>
+                            <td class="total" id="body"><?php echo $result['body'] ?></td>
+                            <td class="total" id="flavor"><?php echo $result['flavor'] ?></td>
+                            <td class="total" id="decaf"><?php echo ($result['decaf']) ? 'Yes' : 'No'; ?></td>
+                            <td class="total" id="roast"><?php echo $result['roast'] ?></td>
 
-                          <td  class="favorite">
-                              <button type="button" id="button1" class="favoritebutton" onclick="Warn(this.id);">Favorite
-                              </button>
-                          </td>
-                          <?php endforeach; ?>
-                        </tr>
+                            <td  class="favorite">
+                                <button type="button" id="button1" class="favoritebutton" onclick="Warn(this.id);">Favorite
+                                </button>
+                            </td>
+                          </tr>
+                        <?php endforeach; ?>
                       </tbody>
                     </table>
                 </div>
