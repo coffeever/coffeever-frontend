@@ -68,6 +68,7 @@ if (isset($_GET['code'])) {
     <link rel="stylesheet" href="/templates/coffeever/css/flaticon.css">
     <link rel="stylesheet" href="/templates/coffeever/css/icomoon.css">
     <link rel="stylesheet" href="/templates/coffeever/css/style.css">
+    <link rel="stylesheet" href="/templates/coffeever/css/circle.css">
     <link rel="icon" href="/templates/coffeever/images/icons/favicon.png" sizes="32x32">
   </head>
   <body>

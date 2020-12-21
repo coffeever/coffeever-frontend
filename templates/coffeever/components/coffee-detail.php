@@ -1,7 +1,6 @@
 <?php
 defined('INDEX') or die();
 $keywords = explode(', ', $pageData['keywords']);
-debugPrint($keywords);
 ?>
 <section class="home-slider owl-carousel">
 <div class="slider-item" style="background-image: url(templates/coffeever/images/bg_3.jpg);" data-stellar-background-ratio="0.5">
@@ -127,21 +126,18 @@ debugPrint($keywords);
           </div>
         </div>
 
+      <?php if(isset($keywords) && !empty($keywords)): ?>
       <div class="col-lg-4">
           <div class="sidebar-box ftco-animate fadeInUp ftco-animated">
               <h3>Keywords</h3>
                   <div class="tagcloud">
-                      <a href="#" class="tag-cloud-link">black</a>
-                      <a href="#" class="tag-cloud-link">milk</a>
-                      <a href="#" class="tag-cloud-link">decaf</a>
-                      <a href="#" class="tag-cloud-link">medium</a>
-                      <a href="#" class="tag-cloud-link">tasty</a>
-                      <a href="#" class="tag-cloud-link">sugar</a>
-                      <a href="#" class="tag-cloud-link">latte</a>
-                      <a href="#" class="tag-cloud-link">creamy</a>
+                    <?php foreach($keywords as $keyword): ?>
+                      <a href="#" class="tag-cloud-link"><?php echo $keyword; ?></a>
+                    <?php endforeach; ?>
                   </div>
           </div>
       </div>
+      <?php endif; ?>
       </div>
   </div>
 </section>
