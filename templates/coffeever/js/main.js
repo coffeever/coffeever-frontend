@@ -297,5 +297,5 @@
 })(jQuery);
 
 $('body').on('change', '#aroma_slider', function(event){
-	$('#aromaValue').text(('#aroma_slider').val());
+	$('#aromaValue').text($('#aroma_slider').val());
 });
