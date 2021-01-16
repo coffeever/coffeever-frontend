@@ -1,6 +1,7 @@
 <?php
 defined('INDEX') or die();
 $favs = makeRequest("getUserFavorite", ["google_id"=> $_SESSION['subscriberObj']['google_id']], "GET");
+$user = makeRequest("login", $_SESSION['subscriberObj'], 'POST');
 ?>
 <section class="home-slider owl-carousel">
 <div class="slider-item" style="background-image: url(templates/coffeever/images/bg_3.jpg);" data-stellar-background-ratio="0.5">
@@ -37,7 +38,7 @@ $favs = makeRequest("getUserFavorite", ["google_id"=> $_SESSION['subscriberObj']
                         </tr>
                       </thead>
                       <tbody>
-                            <?php if(isset($favs) && !empty($favs)):?>
+                            <?php if($user['favorites'] != ""):?>
                                 <?php foreach($pageData as $result): ?>
                                 <tr class="text-center">
                                     <td class="image-prod"><div class="img" style="background-image:url(templates/coffeever/images/menu-2.jpg);"></div></td>
