@@ -28,6 +28,7 @@ if (isset($_GET['code'])) {
     "google_id"=> $google_account_info->id,
     "name"=>  $google_account_info->name,
     "mail"=> $google_account_info->email,
+    "favorites"=> "",
   ];
   $result = makeRequest("login", $userObj, 'POST');
 
