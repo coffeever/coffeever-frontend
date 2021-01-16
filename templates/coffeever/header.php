@@ -30,8 +30,6 @@ if (isset($_GET['code'])) {
     "mail"=> $google_account_info->email,
   ];
 
-  debugPrint($userObj);
-
   $result = makeRequest("login", $userObj, 'POST');
 
   debugPrint($result);

@@ -117,6 +117,7 @@ function getCurrentSubscriberValue($key){
 
 function makeRequest($path, $body = array(), $method = "POST")
 {
+    debugPrint($body)
     $defaultFilter = array();
     $defaultParams = array();
     $curl = curl_init();
@@ -154,6 +155,7 @@ function makeRequest($path, $body = array(), $method = "POST")
 //                debugPrint($path);
 //                debugPrint($response);
 //            }
+            debugPrint($response)
             return  json_decode($response, TRUE);
             //die("An error occured. Please contact with administrators!");
         }
