@@ -3,7 +3,11 @@ defined('INDEX') or die();
 $coffees = makeRequest('getAllCoffees', [], 'GET');
 
 setConfigParam('PAGE_SIZE',9);
-$productsRequest = makeRequest("getSomeCoffee",["limit"=>getConfigParam('PAGE_SIZE'), "offset" => getSkipSize()], 'GET');
+$filters = [
+  "limit"=>getConfigParam('PAGE_SIZE'),
+  "offset" => getSkipSize()
+];
+$productsRequest = makeRequest("getSomeCoffee", $filters, 'GET');
 $newCoffees = isset($productsRequest["result"]) ? $productsRequest["result"] : [];
 $total = !empty($coffees) ? count($coffees) : 0;
 $pageMax = !empty($total) ? calcPageMax($total) : 1;
