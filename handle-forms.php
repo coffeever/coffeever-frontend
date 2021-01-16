@@ -57,7 +57,7 @@ if(isset($_POST) && !empty($_POST)){
             if(!isLoggedIn()){                        
                 header("Refresh:5; url=/login");
             }
-            $userId = intval($_POST['user-id']);
+            $userId = $_POST['user-id'];
             $cofffeeSlug = $_POST['coffee-slug'];
             $user = [
                 "google_id"=> $userId,
@@ -83,7 +83,7 @@ if(isset($_POST) && !empty($_POST)){
             if(!isLoggedIn()){                        
                 header("Refresh:5; url=/login");
             }
-            $userId = intval($_POST['user-id']);
+            $userId = $_POST['user-id'];
             $cofffeeSlug = $_POST['coffee-slug'];
             $user = [
                 "google_id"=> $userId,
