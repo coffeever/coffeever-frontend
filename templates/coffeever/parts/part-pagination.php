@@ -56,7 +56,7 @@ $urlprefix = str_replace(SITE_URL.'/','',$pathurl);
                     <li><a>...</a></li>
                 <?php else: ?>
                     <?php if($pp==$page): ?>
-                        <li><span class="active"><?php echo $pp;?></span></li>
+                        <li><a class="active"><?php echo $pp;?></a></li>
                     <?php else: ?>
                         <li><a href="<?php echo $urlprefix.addParamsToQueryString('page',$pp)?>"><?php echo $pp;?></a></li>
                     <?php endif ?>
