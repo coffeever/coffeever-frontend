@@ -35,7 +35,7 @@ if (isset($_GET['code'])) {
   $result = makeRequest("login", $userObj, 'POST');
 
   $_SESSION['isLoggedIn'] = true;
-  $_SESSION['subscriberObj'] = $userObj;
+  $_SESSION['subscriberObj'] = $result;
 
   // now you can use this profile info to create account in your website and make user logged in.
 }
