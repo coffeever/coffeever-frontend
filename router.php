@@ -118,7 +118,7 @@ $routes = [
         "file" => "components/favourites.php",
         "onBeforeAction" => function () {
             if(!isLoggedIn()){
-                header('Location: /login')
+                header('Location: /login');
             }
             setConfigParam('siteTitle', 'Your Favourite Coffees');
         },
