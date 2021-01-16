@@ -8,6 +8,7 @@ $newCoffees = isset($productsRequest["result"]) ? $productsRequest["result"] : [
 $total = !empty($coffees) ? count($coffees) : 0;
 $pageMax = !empty($total) ? calcPageMax($total) : 1;
 $pageNum = getPage();
+debugPrint(getSkipSize());
 ?>
 <section class="home-slider owl-carousel">
 
