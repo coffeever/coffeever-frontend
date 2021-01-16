@@ -8,6 +8,7 @@ $filters = [
   "offset" => getSkipSize()
 ];
 $productsRequest = makeRequest("getSomeCoffee", $filters, 'GET');
+debugPrint($productsRequest);
 $newCoffees = isset($productsRequest["result"]) ? $productsRequest["result"] : [];
 $total = !empty($coffees) ? count($coffees) : 0;
 $pageMax = !empty($total) ? calcPageMax($total) : 1;
