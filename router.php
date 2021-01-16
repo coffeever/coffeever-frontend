@@ -123,7 +123,7 @@ $routes = [
             setConfigParam('siteTitle', 'Your Favourite Coffees');
         },
         "data" => function ($params) {
-            $data = makeRequest("getUserFavorite", ["google_id"=> $_SESSION['subscriberObj']], "GET");
+            $data = makeRequest("getUserFavorite", ["google_id"=> $_SESSION['subscriberObj']['google_id']], "GET");
             return $data;
         }
     ],
