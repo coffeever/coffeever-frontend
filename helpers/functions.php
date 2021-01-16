@@ -137,6 +137,7 @@ function makeRequest($path, $body = array(), $method = "POST")
     ));
 
     $response = curl_exec($curl);
+    debugPrint($response);
     $err = curl_error($curl);
     $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
     curl_close($curl);
@@ -150,7 +151,6 @@ function makeRequest($path, $body = array(), $method = "POST")
     } else {
         if ($httpcode == 200) {
             return json_decode($response, TRUE);
-            debugPrint($response);
         } else {
 //            if (DEBUG_MODE) {
 //                debugPrint($path);
