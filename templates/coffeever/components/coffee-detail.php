@@ -79,7 +79,13 @@ if (isLoggedIn()){
                   <input type="hidden" name="user-id" value="<?php echo $_SESSION['subscriberObj']['google_id'] ?>">
                 <?php endif; ?>
                 <input type="hidden" name="coffee-slug" value="<?php echo $pageData['slug'] ?>">
-                <button type="submit" class="main-button" <?php echo (isLoggedIn()) ? '' : 'disabled'; ?>>+Add Favourite</button>
+                <button type="submit" class="main-button" <?php echo (isLoggedIn()) ? '' : 'disabled'; ?>>
+                <?php if($isFav): ?>
+                  -Delete Favourite
+                <?php else: ?>
+                  +Add Favourite
+                <?php endif; ?>
+                </button>
               </form>
           </div>
       </div>
