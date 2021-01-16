@@ -28,10 +28,18 @@ if (isset($_GET['code'])) {
   $email =  $google_account_info->email;
   $name =  $google_account_info->name;
 
+  /*
   $userObj = [
     "google_id"=> $google_account_info->id,
     "name"=> $google_account_info->name,
     "mail"=> $google_account_info->email,
+  ];
+  */
+
+  $userObj = [
+    "google_id"=> "123",
+    "name"=> "Deneme",
+    "mail"=> "Deneme mail",
   ];
 
   $result = makeRequest("login", $userObj, 'POST');
