@@ -90,6 +90,7 @@ if (isset($_GET['code'])) {
               <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:22px;"><span class="icon icon-user"></span></a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
                 <a class="dropdown-item" href="/favourites">Favourites</a>
+                <a class="dropdown-item" href="/recommendations">Recommendations</a>
                 <a class="dropdown-item" href="/logout">Logout</a>
               </div>
             </li>

@@ -128,6 +128,16 @@ $routes = [
         }
     ],
     [
+        "route" => "^recommendations[\/]?$",
+        "file" => "components/recommendations.php",
+        "onBeforeAction" => function () {
+            if(!isLoggedIn()){
+                header('Location: /login');
+            }
+            setConfigParam('siteTitle', 'Recommended Coffees');
+        }
+    ],
+    [
         "route" => "^coffees[\/]?$",
         "file" => "components/coffees.php",
         "onBeforeAction" => function () {
