@@ -24,11 +24,11 @@ if (isset($_GET['code'])) {
   $google_oauth = new Google_Service_Oauth2($client);
   $google_account_info = $google_oauth->userinfo->get();
 
-  debugPrint(intval($google_account_info->id));
+  debugPrint(($google_account_info->id));
 
 
   $userObj = [
-    "google_id"=> intval($google_account_info->id),
+    "google_id"=> ($google_account_info->id),
     "name"=>  $google_account_info->name,
     "mail"=> $google_account_info->email,
   ];
