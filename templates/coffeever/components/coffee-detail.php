@@ -5,6 +5,8 @@ $keywords = explode(', ', $pageData['keywords']);
 $isFav = false;
 if (isLoggedIn()){
   $user = $_SESSION['subscriberObj'];
+  $result = makeRequest("login", $user, 'POST');
+  $_SESSION['subscriberObj'] = $result;
   if(str_contains($user['favorites'], $pageData['slug'])) {
     $isFav = true;
   }
