@@ -8,6 +8,7 @@ $routes = [
         "file" => "home.php",
         "onBeforeAction" => function () {
             setConfigParam('siteTitle', 'Coffever');
+            setConfigParam('page', 'home');
         }
     ],
     [
@@ -64,6 +65,7 @@ $routes = [
 
         "onBeforeAction" => function () {
             setConfigParam('siteTitle', 'Our Team');
+            setConfigParam('page', 'our-team');
         }
     ],
     [
@@ -72,6 +74,7 @@ $routes = [
 
         "onBeforeAction" => function () {
             setConfigParam('siteTitle', 'Contact');
+            setConfigParam('page', 'contact');
         }
     ],
     [
@@ -79,6 +82,7 @@ $routes = [
         "file" => "components/search.php",
         "onBeforeAction" => function () {
             setConfigParam('siteTitle', 'Search');
+            setConfigParam('page', 'search');
         }
     ],
     [
@@ -114,6 +118,7 @@ $routes = [
         "file" => "components/coffees.php",
         "onBeforeAction" => function () {
             setConfigParam('siteTitle', 'Search');
+            setConfigParam('page', 'coffees');
         }
     ],
     [

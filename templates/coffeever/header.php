@@ -80,11 +80,11 @@ if (isset($_GET['code'])) {
 	      </button>
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
-	          <li class="nav-item"><a href="/search" class="nav-link">Search</a></li>
-	          <li class="nav-item"><a href="/coffees" class="nav-link">Coffees</a></li>
-	          <li class="nav-item"><a href="/our-team" class="nav-link">Our Team</a></li>
-            <li class="nav-item"><a href="/contact" class="nav-link">Contact Us</a></li>
+	          <li class="nav-item <?php echo (getConfigParam('page') == "home" ? "active" : "")?>"><a href="/" class="nav-link">Home</a></li>
+	          <li class="nav-item <?php echo (getConfigParam('page') == "search" ? "active" : "")?>"><a href="/search" class="nav-link">Search</a></li>
+	          <li class="nav-item <?php echo (getConfigParam('page') == "coffees" ? "active" : "")?>"><a href="/coffees" class="nav-link">Coffees</a></li>
+	          <li class="nav-item <?php echo (getConfigParam('page') == "our-team" ? "active" : "")?>"><a href="/our-team" class="nav-link">Our Team</a></li>
+            <li class="nav-item <?php echo (getConfigParam('page') == "contact" ? "active" : "")?>"><a href="/contact" class="nav-link">Contact Us</a></li>
             <?php if(isLoggedIn()): ?>
               <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:22px;"><span class="icon icon-user"></span></a>
