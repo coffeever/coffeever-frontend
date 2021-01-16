@@ -1,8 +1,14 @@
 <?php
 defined('INDEX') or die();
 $coffees = makeRequest('getAllCoffees', [], 'GET');
-
 $newCoffees = array_slice($coffees, 0, 9);
+
+setConfigParam('PAGE_SIZE',20);
+$productsRequest = makeRequest("getSomeCoffees",["limit"=>getConfigParam('PAGE_SIZE'), "offset" => getSkipSize()], 'GET');
+$products = isset($productsRequest["result"]) ? $productsRequest["result"] : [];
+$total = !empty($coffees) ? count($coffees) : 0;
+$pageMax = !empty($total) ? calcPageMax($total) : 1;
+$pageNum = getPage();
 ?>
 <section class="home-slider owl-carousel">
 
@@ -41,6 +47,9 @@ $newCoffees = array_slice($coffees, 0, 9);
             <?php endforeach; ?>
         <?php endif; ?>
   </div>
+  <div id="site-pagination">
+                            <?php include(ROOT_DIR."/templates/coffeever/parts/part-pagination.php"); ?>
+                        </div>
   <div class="row mt-5">
     <div class="col text-center">
       <div class="block-27">

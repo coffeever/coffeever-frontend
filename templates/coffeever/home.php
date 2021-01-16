@@ -207,36 +207,36 @@ $first6Coffee = array_slice($result, 0, 6);
         <div class="row">
         	<div class="col-md-3">
         		<div class="menu-entry">
-    					<a href="#" class="img" style="background-image: url(templates/coffeever/images/menu-1.jpg);"></a>
+    					<a class="img" style="background-image: url(templates/coffeever/images/menu-1.jpg);"></a>
     					<div class="text text-center pt-4">
-    						<h3><a href="#">Cortado</a></h3>
+    						<h3><a>Cortado</a></h3>
     						<p>Cortado is a Spanish beverage made by pouring a small amount of espresso in a small glass cup</p>
     					</div>
     				</div>
         	</div>
         	<div class="col-md-3">
         		<div class="menu-entry">
-    					<a href="#" class="img" style="background-image: url(templates/coffeever/images/menu-2.jpg);"></a>
+    					<a  class="img" style="background-image: url(templates/coffeever/images/menu-2.jpg);"></a>
     					<div class="text text-center pt-4">
-    						<h3><a href="#">Ristretto</a></h3>
+    						<h3><a >Ristretto</a></h3>
     						<p>Ristretto, which means restricted in Italian, is half of a single shot of espresso</p>
     					</div>
     				</div>
         	</div>
         	<div class="col-md-3">
         		<div class="menu-entry">
-    					<a href="#" class="img" style="background-image: url(templates/coffeever/images/menu-3.jpg);"></a>
+    					<a class="img" style="background-image: url(templates/coffeever/images/menu-3.jpg);"></a>
     					<div class="text text-center pt-4">
-    						<h3><a href="#">Cold-Brewed Iced</a></h3>
+    						<h3><a >Cold-Brewed Iced</a></h3>
     						<p>Created by steeping ground coffee in room temperature water for 12 hours and then filtering out the grounds for a clean coffee</p>
     					</div>
     				</div>
         	</div>
         	<div class="col-md-3">
         		<div class="menu-entry">
-    					<a href="#" class="img" style="background-image: url(templates/coffeever/images/menu-4.jpg);"></a>
+    					<a class="img" style="background-image: url(templates/coffeever/images/menu-4.jpg);"></a>
     					<div class="text text-center pt-4">
-    						<h3><a href="#">Coffee Capuccino</a></h3>
+    						<h3><a>Coffee Capuccino</a></h3>
     						<p>An espresso-based coffee drink that originated in Italy, and is traditionally prepared with steamed milk foam</p>
     					</div>
     				</div>
