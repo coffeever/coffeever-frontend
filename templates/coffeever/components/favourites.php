@@ -36,32 +36,38 @@ defined('INDEX') or die();
                         </tr>
                       </thead>
                       <tbody>
-                        <?php foreach($pageData as $result): ?>
-                          <tr class="text-center">
-                            <td class="image-prod"><div class="img" style="background-image:url(templates/coffeever/images/menu-2.jpg);"></div></td>
-                            
-                            <td class="product-name">
-                                <h3><a href="/coffee-detail/<?php echo $result['slug'] ?>"><?php echo $result['name'] ?></a></h3>
-                                <p><?php echo excerptStringByWord($result['blindAssessment'], 12); ?></p>
-                            </td>
-                            
-                            <td class="total" id="aroma"><?php echo $result['aroma'] ?></td>                                
-                            <td class="total" id="acidity"><?php echo $result['acidity'] ?></td>
-                            <td class="total" id="body"><?php echo $result['body'] ?></td>
-                            <td class="total" id="flavor"><?php echo $result['flavor'] ?></td>
-                            <td class="total" id="decaf"><?php echo ($result['decaf']) ? 'Yes' : 'No'; ?></td>
-                            <td class="total" id="roast"><?php echo $result['roast'] ?></td>
-                            <td  class="favorite">
-                                <form method="post">
-                                    <input type="hidden" name="_nonce" value="<?php echo md5(INDEX); ?>">
-                                    <input type="hidden" name="action" value="delete-fav">
-                                    <input type="hidden" name="user-id" value="<?php echo $_SESSION['subscriberObj']['google_id'] ?>">
-                                    <input type="hidden" name="coffee-slug" value="<?php echo $result['slug'] ?>">
-                                    <button type="submit" class="main-button">Delete</button>
-                                </form>
-                            </td>
-                          </tr>
-                        <?php endforeach; ?>
+                          <?php if(isset($pageData) && !empty($pageData)):?>
+                            <?php foreach($pageData as $result): ?>
+                            <tr class="text-center">
+                                <td class="image-prod"><div class="img" style="background-image:url(templates/coffeever/images/menu-2.jpg);"></div></td>
+                                
+                                <td class="product-name">
+                                    <h3><a href="/coffee-detail/<?php echo $result['slug'] ?>"><?php echo $result['name'] ?></a></h3>
+                                    <p><?php echo excerptStringByWord($result['blindAssessment'], 12); ?></p>
+                                </td>
+                                
+                                <td class="total" id="aroma"><?php echo $result['aroma'] ?></td>                                
+                                <td class="total" id="acidity"><?php echo $result['acidity'] ?></td>
+                                <td class="total" id="body"><?php echo $result['body'] ?></td>
+                                <td class="total" id="flavor"><?php echo $result['flavor'] ?></td>
+                                <td class="total" id="decaf"><?php echo ($result['decaf']) ? 'Yes' : 'No'; ?></td>
+                                <td class="total" id="roast"><?php echo $result['roast'] ?></td>
+                                <td  class="favorite">
+                                    <form method="post">
+                                        <input type="hidden" name="_nonce" value="<?php echo md5(INDEX); ?>">
+                                        <input type="hidden" name="action" value="delete-fav">
+                                        <input type="hidden" name="user-id" value="<?php echo $_SESSION['subscriberObj']['google_id'] ?>">
+                                        <input type="hidden" name="coffee-slug" value="<?php echo $result['slug'] ?>">
+                                        <button type="submit" class="main-button">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <?php endforeach; ?>
+                            <?php else ?>
+                            <tr class="text-center">
+                                <td class="image-prod">You have not added any favorite coffee yet. You can find new coffees using the search engine.</td>
+                            </tr>
+                          <?php endif ?>
                       </tbody>
                     </table>
                 </div>
