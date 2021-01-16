@@ -114,6 +114,20 @@ $routes = [
         }
     ],
     [
+        "route" => "^favourites[\/]?$",
+        "file" => "components/favourites.php",
+        "onBeforeAction" => function () {
+            if(!isLoggedIn()){
+                header('Location: /login')
+            }
+            setConfigParam('siteTitle', 'Your Favourite Coffees');
+        },
+        "data" => function ($params) {
+            $data = makeRequest("getUserFavorite", ["google_id"=> $_SESSION['subscriberObj']], "GET");
+            return $data;
+        }
+    ],
+    [
         "route" => "^coffees[\/]?$",
         "file" => "components/coffees.php",
         "onBeforeAction" => function () {

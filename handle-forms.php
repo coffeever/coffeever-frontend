@@ -77,6 +77,30 @@ if(isset($_POST) && !empty($_POST)){
                 $actionResult['status'] = false;
             }
             break;
+        case 'delete-fav':
+            if(!isLoggedIn()){                        
+                header("Refresh:5; url=/login");
+            }
+            $userId = intval($_POST['user-id']);
+            $cofffeeSlug = $_POST['coffee-slug'];
+            $user = [
+                "google_id"=> $userId,
+                "favorites"=> $cofffeeSlug
+            ];
+            $result = makeRequest('deleteUserFavorite',$user,'GET');
+            if(!empty($result)){
+                if($result['success']){
+                    $actionResult['status'] = true;
+                }
+                else{
+                    $actionResult['status'] = false;
+                    $actionResult['message'] = $result['message'];
+                }
+            }
+            else{
+                $actionResult['status'] = false;
+            }
+            break;
         case 'register':
             if(isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn']){
                 $actionResult['status'] = false;

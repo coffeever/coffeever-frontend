@@ -1,7 +1,6 @@
 <?php
 defined('INDEX') or die();
 global $actionResult;
-debugPrint($actionResult);
 $keywords = explode(', ', $pageData['keywords']);
 ?>
 <section class="home-slider owl-carousel">
