@@ -44,8 +44,10 @@ if (isLoggedIn()){
                         <?php foreach($pageData as $result): ?>
                           <?php 
                           $isFav = false;
-                          if(str_contains($$_SESSION['subscriberObj']['favorites'], $result['slug'])) {
-                            $isFav = true;
+                          if(isLoggedIn()){
+                            if(str_contains($_SESSION['subscriberObj']['favorites'], $result['slug'])) {
+                              $isFav = true;
+                            }
                           }
                           ?>
                           <tr class="text-center">
@@ -62,7 +64,7 @@ if (isLoggedIn()){
                             <td class="total" id="flavor"><?php echo $result['flavor'] ?></td>
                             <td class="total" id="decaf"><?php echo ($result['decaf']) ? 'Yes' : 'No'; ?></td>
                             <td class="total" id="roast"><?php echo $result['roast'] ?></td>
-                            <?php if(isLoggedId()):?>,
+                            <?php if(isLoggedIn()):?>,
                             <?php if($isFav): ?>
                               <td  class="favorite">
                                 <form method="post">
