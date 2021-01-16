@@ -24,7 +24,7 @@ if (isset($_GET['code'])) {
   $google_oauth = new Google_Service_Oauth2($client);
   $google_account_info = $google_oauth->userinfo->get();
 
-  debugPrint($google_account_info);
+  debugPrint($google_account_info->id);
 
 
   $userObj = [
