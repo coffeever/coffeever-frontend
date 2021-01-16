@@ -44,29 +44,29 @@ $pathurl=strtok($_SERVER["REQUEST_URI"],'?');
 $urlprefix = str_replace(SITE_URL.'/','',$pathurl);
 
 ?>
-
-<div class="text-center">
-    <nav class="site-pagination">
-        <ul class="notranslate d-flex align-items-center justify-content-center">
+<div class="row mt-5">
+    <div class="col text-center">
+      <div class="block-27">
+        <ul>
             <?php if($page>1): ?>
-            <li><a class="prev page-numbers d-flex align-items-center" title="Önceki" href="<?php echo $urlprefix.addParamsToQueryString('page',$page-1)?>">←</a></li>
+                <li><a href="<?php echo $urlprefix.addParamsToQueryString('page',$page-1)?>">&lt;</a></li>
             <?php endif ?>
-
             <?php foreach($printablePages as $pp ): ?>
                 <?php if($pp==-1): ?>
-                    <li class="page-item"><a class="page-link">...</a></li>
+                    <li><a>...</a></li>
                 <?php else: ?>
                     <?php if($pp==$page): ?>
-                        <li><span class="btn-active page-numbers d-flex align-items-center"><?php echo $pp;?></span></li>
+                        <li><span class="active"><?php echo $pp;?></span></li>
                     <?php else: ?>
-                        <li><a class="page-numbers d-flex align-items-center" href="<?php echo $urlprefix.addParamsToQueryString('page',$pp)?>"><?php echo $pp;?></a></li>
+                        <li><a href="<?php echo $urlprefix.addParamsToQueryString('page',$pp)?>"><?php echo $pp;?></a></li>
                     <?php endif ?>
                 <?php endif; ?>
             <?php endforeach; ?>
 
             <?php if($page<$pageMax): ?>
-            <li><a class="next page-numbers d-flex align-items-center" title="Next" href="<?php echo $urlprefix.addParamsToQueryString('page',$page+1)?>">→</a></li>
+                <li><a href="<?php echo $urlprefix.addParamsToQueryString('page',$page+1)?>">&gt;</a></li>
             <?php endif ?>
         </ul>
-    </nav>
+      </div>
+    </div>
 </div>
