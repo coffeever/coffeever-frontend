@@ -57,7 +57,7 @@ defined('INDEX') or die();
                                     <input type="hidden" name="action" value="delete-fav">
                                     <input type="hidden" name="user-id" value="<?php echo $_SESSION['subscriberObj']['google_id'] ?>">
                                     <input type="hidden" name="coffee-slug" value="<?php echo $result['slug'] ?>">
-                                    <button type="button" id="button1" class="favoritebutton" onclick="Warn(this.id);">Delete</button>
+                                    <button type="submit">Delete</button>
                                 </form>
                             </td>
                           </tr>
