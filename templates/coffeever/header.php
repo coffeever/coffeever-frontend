@@ -25,7 +25,7 @@ if (isset($_GET['code'])) {
   $google_account_info = $google_oauth->userinfo->get();
 
   $userObj = [
-    "google_id"=> "10000000000",
+    "google_id"=> $google_account_info->id,
     "name"=>  $google_account_info->name,
     "mail"=> $google_account_info->email,
   ];
