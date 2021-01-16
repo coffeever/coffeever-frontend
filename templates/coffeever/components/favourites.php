@@ -1,6 +1,6 @@
 <?php
 defined('INDEX') or die();
-debugPrint($pageData);
+debugPrint(count($pageData));
 ?>
 <section class="home-slider owl-carousel">
 <div class="slider-item" style="background-image: url(templates/coffeever/images/bg_3.jpg);" data-stellar-background-ratio="0.5">
