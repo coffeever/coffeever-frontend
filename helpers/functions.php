@@ -150,12 +150,12 @@ function makeRequest($path, $body = array(), $method = "POST")
     } else {
         if ($httpcode == 200) {
             return json_decode($response, TRUE);
+            debugPrint($response);
         } else {
 //            if (DEBUG_MODE) {
 //                debugPrint($path);
 //                debugPrint($response);
 //            }
-            debugPrint($response);
             return  json_decode($response, TRUE);
             //die("An error occured. Please contact with administrators!");
         }
