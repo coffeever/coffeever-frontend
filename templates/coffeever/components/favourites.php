@@ -37,7 +37,7 @@ debugPrint($pageData);
                         </tr>
                       </thead>
                       <tbody>
-                            <?php if(isset($pageData) && !empty($pageData)):?>
+                            <?php if(count($pageData) > 0):?>
                                 <?php foreach($pageData as $result): ?>
                                 <tr class="text-center">
                                     <td class="image-prod"><div class="img" style="background-image:url(templates/coffeever/images/menu-2.jpg);"></div></td>
