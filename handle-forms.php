@@ -64,6 +64,8 @@ if(isset($_POST) && !empty($_POST)){
                 "favorites"=> $cofffeeSlug
             ];
             $result = makeRequest('addFavorite',$user,'GET');
+            $user = makeRequest("login", $_SESSION['subscriberObj'], 'POST');
+            $_SESSION['subscriberObj'] = $user;
             if(!empty($result)){
                 if($result['success']){
                     $actionResult['status'] = true;
@@ -88,6 +90,8 @@ if(isset($_POST) && !empty($_POST)){
                 "favorites"=> $cofffeeSlug
             ];
             $result = makeRequest('deleteUserFavorite',$user,'GET');
+            $user = makeRequest("login", $_SESSION['subscriberObj'], 'POST');
+            $_SESSION['subscriberObj'] = $user;
             if(!empty($result)){
                 if($result['success']){
                     $actionResult['status'] = true;

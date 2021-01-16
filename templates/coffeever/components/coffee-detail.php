@@ -2,6 +2,13 @@
 defined('INDEX') or die();
 global $actionResult;
 $keywords = explode(', ', $pageData['keywords']);
+$isFav = false;
+if (isLoggedIn()){
+  $user = $_SESSION['subscriberObj'];
+  if(str_contains($user['favorites'], $pageData['slug'])) {
+    $isFav = true;
+  }
+}
 ?>
 <section class="home-slider owl-carousel">
 <div class="slider-item" style="background-image: url(/templates/coffeever/images/bg_3.jpg);" data-stellar-background-ratio="0.5">
@@ -62,8 +69,12 @@ $keywords = explode(', ', $pageData['keywords']);
            </div>
               <p>This coffee bean is <?php echo $pageData['roast']; ?> roasted and grown in the <?php echo $pageData['region']; ?> region.</p>
               <form method="post">
+                <?php if($isFav): ?>
+                  <input type="hidden" name="action" value="delete-fav">
+                <?php else: ?>
+                  <input type="hidden" name="action" value="add-fav">
+                <?php endif; ?>
                 <input type="hidden" name="_nonce" value="<?php echo md5(INDEX); ?>">
-                <input type="hidden" name="action" value="add-fav">
                 <?php if(isLoggedIn()): ?>
                   <input type="hidden" name="user-id" value="<?php echo $_SESSION['subscriberObj']['google_id'] ?>">
                 <?php endif; ?>

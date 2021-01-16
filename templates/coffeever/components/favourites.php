@@ -65,10 +65,11 @@ $user = makeRequest("login", $_SESSION['subscriberObj'], 'POST');
                                     </td>
                                 </tr>
                                 <?php endforeach; ?>
-                            <?php endif; ?>
-                            <tr class="text-center">
+                            <?php else: ?>
+                            <tr class="text-center" colspan="9">
                                 <td class="image-prod">You have not added any favorite coffee yet. You can find new coffees using the search engine.</td>
                             </tr>
+                            <?php endif; ?>
                       </tbody>
                     </table>
                 </div>
