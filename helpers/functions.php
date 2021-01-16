@@ -117,6 +117,7 @@ function getCurrentSubscriberValue($key){
 
 function makeRequest($path, $body = array(), $method = "POST")
 {
+    debugPrint($body);
     $defaultFilter = array();
     $defaultParams = array();
     $curl = curl_init();
