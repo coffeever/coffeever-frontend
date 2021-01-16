@@ -6,7 +6,7 @@ defined('INDEX') or die();
         <div class="overlay"></div>
       <div class="container">
         <div class="row mb-5">
-          <div class="col-lg-3 col-md-6 mb-5 mb-md-5">
+          <div class="col-lg-6 col-md-6 mb-5 mb-md-5">
             <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">About Us</h2>
               <p>All you need to know about us is that we love coffee. Therefore, if you want to get to know us better, you can review your social media channels below.</p>
@@ -17,33 +17,7 @@ defined('INDEX') or die();
               </ul>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 mb-5 mb-md-5">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Recent Blog</h2>
-              <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url(templates/coffeever/images/image_1.jpg);"></a>
-                <div class="text">
-                  <h3 class="heading"><a href="#">Y’all Are Not Adding Enough Ice To My Cold Drinks</a></h3>
-                  <div class="meta">
-                    <div><a href="#"><span class="icon-calendar"></span> Dec 12, 2020</a></div>
-                    <div><a href="#"><span class="icon-person"></span> Michelle Johnson</a></div>
-                  </div>
-                </div>
-              </div>
-              <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url(templates/coffeever/images/image_2.jpg);"></a>
-                <div class="text">
-                  <h3 class="heading"><a href="#">The World’s Most Incredible Egg Nog Latte Is Made In Guadalajara</a></h3>
-                  <div class="meta">
-                    <div><a href="#"><span class="icon-calendar"></span> Dec 12, 2020</a></div>
-                    <div><a href="#"><span class="icon-person"></span> Victor Romero</a></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-                  
-          <div class="col-lg-3 col-md-6 mb-5 mb-md-5">
+          <div class="col-lg-6 col-md-6 mb-5 mb-md-5">
             <div class="ftco-footer-widget mb-4">
                 <h2 class="ftco-heading-2">Have a Question?</h2>
                 <div class="block-23 mb-3">
