@@ -57,7 +57,7 @@ debugPrint($pageData);
                                     <input type="hidden" name="_nonce" value="<?php echo md5(INDEX); ?>">
                                     <input type="hidden" name="action" value="delete-fav">
                                     <input type="hidden" name="user-id" value="<?php echo $_SESSION['subscriberObj']['google_id'] ?>">
-                                    <input type="hidden" name="coffee-slug" value="<?php echo $pageData['slug'] ?>">
+                                    <input type="hidden" name="coffee-slug" value="<?php echo $result['slug'] ?>">
                                     <button type="button" id="button1" class="favoritebutton" onclick="Warn(this.id);">Delete</button>
                                 </form>
                             </td>
