@@ -53,6 +53,30 @@ if(isset($_POST) && !empty($_POST)){
     $resolvedRecaptcha = true; // recaptcha eklendiğinde bu satırı sil
     $issetRecaptcha = true; // recaptcha eklendiğinde bu satırı sil
     switch($action){
+        case 'add-fav':
+            if(!isLoggedIn()){                        
+                header("Refresh:5; url=/login");
+            }
+            $userId = $_POST['user-id'];
+            $cofffeeSlug = $_POST['coffee-slug'];
+            $user = [
+                "google_id"=> $userId,
+                "favorites"=> $cofffeeSlug
+            ];
+            $result = makeRequest('addFavorite',$user,'GET');
+            if(!empty($result)){
+                if($result['success']){
+                    $actionResult['status'] = true;
+                }
+                else{
+                    $actionResult['status'] = false;
+                    $actionResult['message'] = $result['message'];
+                }
+            }
+            else{
+                $actionResult['status'] = false;
+            }
+            break;
         case 'register':
             if(isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn']){
                 $actionResult['status'] = false;

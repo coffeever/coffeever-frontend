@@ -1,5 +1,7 @@
 <?php
 defined('INDEX') or die();
+global $actionResult;
+debugPrint($actionResult);
 $keywords = explode(', ', $pageData['keywords']);
 ?>
 <section class="home-slider owl-carousel">
@@ -60,6 +62,15 @@ $keywords = explode(', ', $pageData['keywords']);
                </div>  
            </div>
               <p>This coffee bean is <?php echo $pageData['roast']; ?> roasted and grown in the <?php echo $pageData['region']; ?> region.</p>
+              <form>
+                <input type="hidden" name="_nonce" value="<?php echo md5(INDEX); ?>">
+                <input type="hidden" name="action" value="login">
+                <?php if(isLoggedIn()): ?>
+                  <input type="hidden" name="user-id" value="<?php echo $_SESSION['subscriberObj']['google_id'] ?>">
+                <?php endif; ?>
+                <input type="hidden" name="coffee-slug" value="<?php echo $pageData['slug'] ?>">
+                <button type="submit" disabled="<?php echo (isLoggedIn() == true) ? '' : 'disabled'; ?>">+Add Favourite</button>
+              </form>
           </div>
       </div>
   </div>
