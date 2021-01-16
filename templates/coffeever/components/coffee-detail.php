@@ -64,7 +64,7 @@ $keywords = explode(', ', $pageData['keywords']);
               <p>This coffee bean is <?php echo $pageData['roast']; ?> roasted and grown in the <?php echo $pageData['region']; ?> region.</p>
               <form method="post">
                 <input type="hidden" name="_nonce" value="<?php echo md5(INDEX); ?>">
-                <input type="hidden" name="action" value="login">
+                <input type="hidden" name="action" value="add-fav">
                 <?php if(isLoggedIn()): ?>
                   <input type="hidden" name="user-id" value="<?php echo $_SESSION['subscriberObj']['google_id'] ?>">
                 <?php endif; ?>
