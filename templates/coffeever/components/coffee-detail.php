@@ -68,7 +68,7 @@ $keywords = explode(', ', $pageData['keywords']);
                   <input type="hidden" name="user-id" value="<?php echo $_SESSION['subscriberObj']['google_id'] ?>">
                 <?php endif; ?>
                 <input type="hidden" name="coffee-slug" value="<?php echo $pageData['slug'] ?>">
-                <button type="submit" <?php echo (isLoggedIn()) ? '' : 'disabled'; ?>>+Add Favourite</button>
+                <button type="submit" class="main-button" <?php echo (isLoggedIn()) ? '' : 'disabled'; ?>>+Add Favourite</button>
               </form>
           </div>
       </div>
