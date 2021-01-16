@@ -24,6 +24,9 @@ if (isset($_GET['code'])) {
   $google_oauth = new Google_Service_Oauth2($client);
   $google_account_info = $google_oauth->userinfo->get();
 
+  debugPrint($google_account_info);
+
+
   $userObj = [
     "google_id"=> intval($google_account_info->id),
     "name"=>  $google_account_info->name,
@@ -32,7 +35,6 @@ if (isset($_GET['code'])) {
 
   $result = makeRequest("login", $userObj, 'POST');
 
-  debugPrint($result);
 
 
   $_SESSION['isLoggedIn'] = true;
