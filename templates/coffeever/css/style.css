@@ -8035,7 +8035,6 @@ h1, h2, h3, h4, h5,
   height: 54px ;
   text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.1) ;
-  color: #c49b63;
   padding: 0; }
 
 .ftco-cart .form-group {
@@ -9322,7 +9321,30 @@ textarea.form-control {
           padding-top: 0em !important;
       }
 .main-button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.add-btn {
   background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.delete-btn {
+  background-color: #1b5224;
   border: none;
   color: white;
   padding: 15px 32px;

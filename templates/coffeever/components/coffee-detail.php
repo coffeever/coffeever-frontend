@@ -70,25 +70,29 @@ if (isLoggedIn()){
                </div>  
            </div>
               <p>This coffee bean is <?php echo $pageData['roast']; ?> roasted and grown in the <?php echo $pageData['region']; ?> region.</p>
-              <form method="post">
-                <?php if($isFav): ?>
-                  <input type="hidden" name="action" value="delete-fav">
-                <?php else: ?>
-                  <input type="hidden" name="action" value="add-fav">
-                <?php endif; ?>
-                <input type="hidden" name="_nonce" value="<?php echo md5(INDEX); ?>">
-                <?php if(isLoggedIn()): ?>
-                  <input type="hidden" name="user-id" value="<?php echo $_SESSION['subscriberObj']['google_id'] ?>">
-                <?php endif; ?>
-                <input type="hidden" name="coffee-slug" value="<?php echo $pageData['slug'] ?>">
-                <button type="submit" class="main-button" <?php echo (isLoggedIn()) ? '' : 'disabled'; ?>>
-                <?php if($isFav): ?>
-                  -Delete Favourite
-                <?php else: ?>
-                  +Add Favourite
-                <?php endif; ?>
-                </button>
-              </form>
+              <?php if(isLoggedIn()): ?>
+                <form method="post">
+                  <?php if($isFav): ?>
+                    <input type="hidden" name="action" value="delete-fav">
+                  <?php else: ?>
+                    <input type="hidden" name="action" value="add-fav">
+                  <?php endif; ?>
+                  <input type="hidden" name="_nonce" value="<?php echo md5(INDEX); ?>">
+                  <?php if(isLoggedIn()): ?>
+                    <input type="hidden" name="user-id" value="<?php echo $_SESSION['subscriberObj']['google_id'] ?>">
+                  <?php endif; ?>
+                  <input type="hidden" name="coffee-slug" value="<?php echo $pageData['slug'] ?>">
+                  <button type="submit" class="main-button <?php echo ($isFav) ? "delete-btn" : "add-btn" ?>" <?php echo (isLoggedIn()) ? '' : 'disabled'; ?>>
+                  <?php if($isFav): ?>
+                    -Delete Favourite
+                  <?php else: ?>
+                    +Add Favourite
+                  <?php endif; ?>
+                  </button>
+                </form>
+              <?php else: ?>
+                <a>You must be logged in to add it to your favorites.</a>
+              <?php endif; ?>
           </div>
       </div>
   </div>

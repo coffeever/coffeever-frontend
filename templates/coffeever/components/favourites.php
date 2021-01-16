@@ -60,7 +60,7 @@ $user = makeRequest("login", $_SESSION['subscriberObj'], 'POST');
                                             <input type="hidden" name="action" value="delete-fav">
                                             <input type="hidden" name="user-id" value="<?php echo $_SESSION['subscriberObj']['google_id'] ?>">
                                             <input type="hidden" name="coffee-slug" value="<?php echo $result['slug'] ?>">
-                                            <button type="submit" class="main-button">Delete</button>
+                                            <button type="submit" class="main-button delete-btn">Delete</button>
                                         </form>
                                     </td>
                                 </tr>

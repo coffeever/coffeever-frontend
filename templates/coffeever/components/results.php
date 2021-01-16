@@ -72,7 +72,7 @@ if (isLoggedIn()){
                                     <input type="hidden" name="action" value="add-fav">
                                     <input type="hidden" name="user-id" value="<?php echo $_SESSION['subscriberObj']['google_id'] ?>">
                                     <input type="hidden" name="coffee-slug" value="<?php echo $result['slug'] ?>">
-                                    <button type="submit" class="main-button">Delete Favourite</button>
+                                    <button type="submit" class="main-button delete-btn">Delete Favourite</button>
                                 </form>
                             </td>
                             <?php else: ?>
@@ -82,7 +82,7 @@ if (isLoggedIn()){
                                     <input type="hidden" name="action" value="add-fav">
                                     <input type="hidden" name="user-id" value="<?php echo $_SESSION['subscriberObj']['google_id'] ?>">
                                     <input type="hidden" name="coffee-slug" value="<?php echo $result['slug'] ?>">
-                                    <button type="submit" class="main-button">Add Favourite</button>
+                                    <button type="submit" class="main-button add-btn">Add Favourite</button>
                                 </form>
                             </td>
                             <?php endif; ?>
