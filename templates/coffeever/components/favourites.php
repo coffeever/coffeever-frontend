@@ -63,11 +63,11 @@ defined('INDEX') or die();
                                 </td>
                             </tr>
                             <?php endforeach; ?>
-                            <?php else ?>
+                            <?php else: ?>
                             <tr class="text-center">
                                 <td class="image-prod">You have not added any favorite coffee yet. You can find new coffees using the search engine.</td>
                             </tr>
-                          <?php endif ?>
+                          <?php endif; ?>
                       </tbody>
                     </table>
                 </div>
