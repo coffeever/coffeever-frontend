@@ -7,7 +7,7 @@ if (isLoggedIn()){
   $user = $_SESSION['subscriberObj'];
   $result = makeRequest("login", $user, 'POST');
   $_SESSION['subscriberObj'] = $result;
-  if(str_contains($user['favorites'], $pageData['slug'])) {
+  if(str_contains($result['favorites'], $pageData['slug'])) {
     $isFav = true;
   }
 }
